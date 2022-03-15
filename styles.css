@@ -1,8 +1,52 @@
 h1 {
   color: black;
+  text-align: center;
 }
 
 #book-form {
   display: flex;
   gap: 10px;
+}
+
+.container {
+  border: 2px;
+  border-style: solid;
+  border-color: black;
+  margin-bottom: 4%;
+}
+
+.book {
+  display: flex;
+  gap: 5px;
+  justify-content: space-between;
+  padding: 1%;
+  background-color: rgb(173, 173, 173);
+  border: 1px;
+  border-color: black;
+  border-style: solid;
+}
+
+.book p {
+  font-size: 20px;
+}
+
+form button {
+  width: 5%;
+}
+
+.book button {
+  height: 20px;
+  align-self: center;
+}
+
+h2 {
+  color: black;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
