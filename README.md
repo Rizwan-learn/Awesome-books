@@ -25,7 +25,7 @@ git@github.com:Rizwan-learn/Awesome-books.git
 
 - GitHub: [@githubhandle](https://github.com/Rizwan-learn)
 - Twitter: [@twitterhandle](https://twitter.com/@rizwanhasan21)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/ rizwanhasan21)
+- LinkedIn: [LinkedIn](https://linkedin.com/@rizwanhasan21)
 
 👤 **Author2**
 
