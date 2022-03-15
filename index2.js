@@ -5,10 +5,10 @@ export default class Book {
   }
 
   getHtml() {
-    return `<div class="book">
-      <p>"${this.title}" by 
-      ${this.author}</p>
+    return `<ul class="book">
+      <li>"${this.title}" by 
+      ${this.author}</li>
       <button class="remove">Remove</button>
-      </div>`;
+      </ul>`;
   }
 }
