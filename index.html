@@ -1,24 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-
-<body>
-    <h1>Awesome books</h1>
-    <div id="book">
-
-    </div>
-    <form>
-        <input type="text" id="title" name="fname" placeholder="Title" style="margin-top: 10px"><br>
-        <input type="text" id="author" name="lname" placeholder="Author" style="margin-top: 10px"><br>
-        <button id="button" style="margin-top: 10px">Add</button>
-    </form>
-    <script type="module" src="./index.js"></script>
-</body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Awesome books</title>
+  </head>
+  <body>
+    <main class="main-section">
+      <h1>Awesome books</h1>
+      <div class="container"></div>
+      <form id="book-form" method="post" action="/">
+        <input
+          name="title"
+          id="title"
+          type="text"
+          maxlength="30"
+          placeholder="Title"
+          required
+        />
+        <label for="title" hidden></label>
+        <input
+          name="author"
+          id="author"
+          type="text"
+          maxlength="30"
+          placeholder="Author"
+          required
+        />
+        <label for="author" hidden></label>
+        <button type="submit">Add</button>
+      </form>
+    </main>
+    <script type="text/javascript" src="index.js"></script>
+  </body>
 </html>
