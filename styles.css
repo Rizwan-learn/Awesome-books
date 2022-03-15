@@ -1,0 +1,8 @@
+h1 {
+  color: black;
+}
+
+#book-form {
+  display: flex;
+  gap: 10px;
+}
