@@ -1,11 +1,13 @@
+.main-section {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  justify-content: center;
+}
+
 h1 {
   color: black;
   text-align: center;
-}
-
-#book-form {
-  display: flex;
-  gap: 10px;
 }
 
 .container {
@@ -13,30 +15,25 @@ h1 {
   border-style: solid;
   border-color: black;
   margin-bottom: 4%;
+  border-radius: 3px;
 }
 
 .book {
   display: flex;
-  gap: 5px;
   justify-content: space-between;
-  padding: 1%;
-  background-color: rgb(173, 173, 173);
   border: 1px;
   border-color: black;
-  border-style: solid;
+  margin: 0;
+  padding: 0;
+  height: 30px;
 }
 
-.book p {
-  font-size: 20px;
+.book:nth-child(odd) {
+  background-color: rgb(173, 173, 173);
 }
 
-form button {
-  width: 5%;
-}
-
-.book button {
-  height: 20px;
-  align-self: center;
+.book:nth-child(even) {
+  background-color: white;
 }
 
 h2 {
@@ -44,9 +41,72 @@ h2 {
   text-align: center;
 }
 
+li {
+  list-style: none;
+  padding: 1%;
+}
+
 form {
   display: flex;
-  justify-content: center;
   flex-direction: column;
-  align-items: center;
+  align-items: end;
+  width: 60%;
+  margin: auto;
+}
+
+#book-form {
+  display: flex;
+  gap: 10px;
+}
+
+.about-border {
+  display: block;
+  width: 20%;
+  height: 2px;
+  background: black;
+  margin: auto;
+}
+
+form button {
+  padding: 3px 10px;
+  background-color: white;
+  box-shadow: 2px 2px;
+  border: 2px solid black;
+}
+
+.book button {
+  align-self: center;
+  background-color: white;
+  box-shadow: 2px 2px;
+  border: 2px solid black;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+input {
+  width: 98%;
+  margin: auto;
+  height: 30px;
+  border: 2px solid black;
+  box-shadow: 1px 1px;
+}
+
+@media screen and (min-width: 1020px) {
+  body {
+    margin: 20px 150px;
+  }
+
+  .main-section {
+    border: 2px solid black;
+    padding: 10px;
+    width: 60%;
+    margin: auto;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .main-section {
+    width: 50%;
+    margin: auto;
+  }
 }
