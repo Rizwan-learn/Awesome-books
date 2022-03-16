@@ -1,3 +1,43 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  width: 50px;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+h4 {
+  margin: 0;
+}
+
+.black {
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+  margin: 0 10px;
+  padding: 0 5px;
+}
+
+#time {
+  text-align: end;
+  margin-top: 10px;
+  font-weight: bolder;
+}
+
 .main-section {
   display: flex;
   flex-direction: column;
@@ -43,7 +83,14 @@ h2 {
 
 li {
   list-style: none;
-  padding: 1%;
+}
+
+.contact {
+  margin: 30px;
+}
+
+#contact li {
+  list-style: disc;
 }
 
 form {
@@ -91,6 +138,21 @@ input {
   box-shadow: 1px 1px;
 }
 
+#contact {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+footer {
+  border: 2px solid black;
+  margin-top: 20px;
+}
+
+p {
+  margin: 10px;
+}
+
 @media screen and (min-width: 1020px) {
   body {
     margin: 20px 150px;
@@ -101,6 +163,18 @@ input {
     padding: 10px;
     width: 60%;
     margin: auto;
+  }
+
+  #contact {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+  }
+
+  footer {
+    border: 2px solid black;
+    padding: 0 10px;
+    margin-top: 20px;
   }
 }
 
