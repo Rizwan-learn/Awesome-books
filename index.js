@@ -1,65 +1,69 @@
-// ARRAY OF OBJECTS TO STORE A LIST OF BOOKS
+import Book from './index2.js';
 
-const bookCollection = [];
+class Books {
+  constructor() {
+    this.books = [];
+  }
 
-// Add book function
-const form = document.getElementById('book-form');
-const { title, author } = form.elements;
+  initialize() {
+    const dataString = localStorage.getItem('bookData');
+    if (dataString) {
+      this.books = JSON.parse(dataString).map((book) => new Book(book.title, book.author));
+      this.setHtml();
+    }
+    this.setupRemove();
+  }
 
-const addBook = function () {
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
+  setupRemove() {
+    const remove = document.querySelectorAll('.remove');
+    const book = document.querySelectorAll('.book');
 
-    const formData = {
-      title: title.value,
-      author: author.value,
-    };
+    remove.forEach((button, i) => {
+      button.addEventListener('click', () => {
+        book[i].remove();
+        this.books.splice(i, 1);
+        localStorage.setItem('bookData', JSON.stringify(this.books));
+      });
+    });
+  }
 
-    bookCollection.push(formData);
-    localStorage.setItem('bookData', JSON.stringify(bookCollection));
-    window.location.reload();
-  });
-};
+  newBook(title, author) {
+    const book = new Book(title, author);
+    this.books.push(book);
+    localStorage.setItem('bookData', JSON.stringify(this.books));
+    this.setHtml();
+    return book;
+  }
 
-// PRESERVE DATA IN THE BROWSER (LOCAL STORAGE)
+  getBookList() {
+    let containerHtml = '';
+    this.books.forEach((book) => {
+      containerHtml += book.getHtml();
+    });
+    return containerHtml;
+  }
 
-const fillForm = localStorage.getItem('bookData');
-
-if (fillForm) {
-  const data = JSON.parse(localStorage.getItem('bookData'));
-
-  bookCollection.push(...data);
+  setHtml() {
+    const container = document.querySelector('.container');
+    container.innerHTML = this.getBookList();
+    this.setupRemove();
+  }
 }
 
-// CREATING BOOKS FROM ARRAY DATA AND POPULATING DYNAMICALLY
+const bookRepo = new Books();
 
-const container = document.querySelector('.container');
+bookRepo.initialize();
 
-bookCollection.forEach((book) => {
-  const content = `<div class="book">
-<p>${book.title}</p>
-<p>${book.author}</p>
-<button class="remove">Remove</button>
-<hr />
-</div>`;
+const addBook = function () {
+  const form = document.getElementById('book-form');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const { title, author } = form.elements;
+    bookRepo.newBook(title.value, author.value);
 
-  container.innerHTML += content;
-});
-
-// Remove book function
-
-const removeBook = function () {
-  const remove = document.querySelectorAll('.remove');
-  const book = document.querySelectorAll('.book');
-
-  remove.forEach((button, i) => {
-    button.addEventListener('click', () => {
-      book[i].remove();
-      bookCollection.splice(i, 1);
-      localStorage.setItem('bookData', JSON.stringify(bookCollection));
-    });
+    title.value = '';
+    author.value = '';
   });
 };
 
 addBook();
-removeBook();
