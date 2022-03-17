@@ -6,7 +6,7 @@ export default class Book {
 
   getHtml() {
     return `<ul class="book">
-      <li>"${this.title}" by 
+      <li class="list">"${this.title}" by 
       ${this.author}</li>
       <button class="remove">Remove</button>
       </ul>`;
